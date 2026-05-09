@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rentalemon — Sewa Kamera & Alat Kreatif di Bandung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #2954E5;
+    --blue-dark: #1E3FB8;
+    --blue-deep: #0E2799;
+    --blue-soft: #4A70F0;
+    --yellow: #FFDD00;
+    --yellow-soft: #FFE93C;
+    --yellow-glow: rgba(255,221,0,0.4);
+    --cream: #F5F1E5;
+    --cream-warm: #FAF6EC;
+    --white: #FFFFFF;
+    --ink: #0A0A0A;
+    --ink-soft: #1A1A1A;
+    --green: #4ADE80;
+    --pink: #FF6B9D;
+    --shadow-card: 0 8px 0 rgba(10,10,10,0.08), 0 2px 8px rgba(10,10,10,0.04);
+    --shadow-pop: 0 6px 0 var(--ink);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--cream-warm);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--yellow); color: var(--ink); }
+
+  /* ─── BUBBLE LOGO ─── */
+  .bubble-logo {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    color: var(--blue);
+    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transform: rotate(-2deg);
+    text-shadow:
+      -1px -1px 0 #fff,
+      1px -1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px 1px 0 #fff,
+      0 -2px 0 var(--blue-dark),
+      2px 0 0 var(--blue-dark),
+      0 2px 0 var(--blue-dark),
+      -2px 0 0 var(--blue-dark);
+  }
+  .bubble-logo .lemon {
+    display: inline-block;
+    transform: translateY(-2px);
+  }
+
+  /* ─── HALFTONE DOT BACKGROUNDS ─── */
+  .dots-light {
+    background-image: radial-gradient(circle, rgba(10,10,10,0.08) 1.5px, transparent 1.6px);
+    background-size: 22px 22px;
+  }
+  .dots-blue-on-cream {
+    background-image: radial-gradient(circle, var(--blue) 2px, transparent 2.5px);
+    background-size: 28px 28px;
+  }
+  .dots-white-on-blue {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1.5px, transparent 1.6px);
+    background-size: 22px 22px;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 32px;
+    background: var(--cream-warm);
+    border-bottom: 2px solid var(--ink);
+  }
+  nav .bubble-logo { font-size: 1.4rem; transform: rotate(-3deg); }
+  nav .bubble-logo .lemon { font-size: 1.2rem; margin: 0 1px; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 600;
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.2s;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0;
+    width: 0; height: 8px;
+    background: var(--yellow);
+    z-index: -1;
+    transition: width 0.25s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--ink);
+    color: var(--cream-warm);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 2px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--yellow);
+    transition: all 0.15s;
+  }
+  .nav-cta:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--yellow); }
+  .nav-cta:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--yellow); }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--blue);
+    color: var(--white);
+    padding: 90px 32px 110px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid var(--ink);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1.8px, transparent 2px);
+    background-size: 26px 26px;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 50px;
+    background: var(--cream-warm);
+    clip-path: polygon(0 100%, 100% 100%, 100% 30%, 95% 60%, 90% 30%, 85% 60%, 80% 30%, 75% 60%, 70% 30%, 65% 60%, 60% 30%, 55% 60%, 50% 30%, 45% 60%, 40% 30%, 35% 60%, 30% 30%, 25% 60%, 20% 30%, 15% 60%, 10% 30%, 5% 60%, 0 30%);
+  }
+
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto;
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px;
+    align-items: center;
+  }
+
+  .hero-watermark {
+    position: absolute;
+    top: 16px; right: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.05em;
+  }
+
+  .pill-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--yellow);
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    box-shadow: 3px 3px 0 var(--ink);
+    transform: rotate(-2deg);
+  }
+
+  .hero h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2.6rem, 6vw, 4.8rem);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.035em;
+    margin-bottom: 28px;
+    color: var(--white);
+  }
+
+  .highlight-yellow {
+    background: linear-gradient(transparent 55%, var(--yellow) 55%);
+    color: var(--white);
+    padding: 0 2px;
+  }
+  .highlight-yellow.solid {
+    background: var(--yellow);
+    color: var(--ink);
+    padding: 2px 10px;
+    display: inline-block;
+    transform: rotate(-1deg);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 480px;
+    margin-bottom: 36px;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+  .hero-sub strong { color: var(--yellow); font-weight: 700; }
+
+  .hero-actions {
+    display: flex; gap: 14px; flex-wrap: wrap; align-items: center;
+  }
+
+  .btn-primary {
+    background: var(--yellow);
+    color: var(--ink);
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 2.5px solid var(--ink);
+    box-shadow: 5px 5px 0 var(--ink);
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: all 0.15s;
+  }
+  .btn-primary:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+  .btn-primary:active { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--ink); }
+
+  .btn-ghost {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    border-bottom: 2px solid var(--yellow);
+    padding-bottom: 2px;
+    transition: opacity 0.2s;
+  }
+  .btn-ghost:hover { opacity: 0.8; }
+
+  /* lemon mascot column */
+  .hero-visual {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 320px;
+  }
+  .hero-lemon {
+    width: 100%; max-width: 360px;
+    animation: bobbing 4s ease-in-out infinite;
+    filter: drop-shadow(0 12px 0 rgba(0,0,0,0.2));
+  }
+  @keyframes bobbing {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-12px) rotate(3deg); }
+  }
+
+  .sticker {
+    position: absolute;
+    background: var(--white);
+    color: var(--ink);
+    border: 2.5px solid var(--ink);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-weight: 800;
+    font-size: 0.82rem;
+    box-shadow: 4px 4px 0 var(--ink);
+    white-space: nowrap;
+  }
+  .sticker-1 { top: 10%; left: -5%; transform: rotate(-8deg); background: var(--yellow); }
+  .sticker-2 { bottom: 15%; right: -8%; transform: rotate(7deg); background: var(--white); }
+
+  /* ─── MARQUEE ─── */
+  .marquee {
+    background: var(--ink);
+    color: var(--cream-warm);
+    padding: 14px 0;
+    overflow: hidden;
+    border-bottom: 3px solid var(--ink);
+  }
+  .marquee-track {
+    display: inline-flex; gap: 40px; white-space: nowrap;
+    animation: scroll 30s linear infinite;
+    padding-right: 40px;
+  }
+  .marquee-track span {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 40px;
+  }
+  .marquee-track span::after {
+    content: '🍋';
+    font-size: 1rem;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ─── SECTIONS ─── */
+  .section {
+    padding: 88px 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .section-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--blue);
+    letter-spacing: 0.06em;
+    margin-bottom: 14px;
+  }
+  .section-eyebrow::before {
+    content: '🍋';
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  .section-sub {
+    font-size: 1.05rem;
+    color: rgba(10,10,10,0.65);
+    max-width: 560px;
+    margin-bottom: 56px;
+    font-weight: 500;
+  }
+
+  /* ─── HOW IT WORKS ─── */
+  #how { background: var(--cream-warm); position: relative; overflow: hidden; }
+  #how::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(41,84,229,0.1) 1.5px, transparent 1.6px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .step-card {
+    background: var(--blue);
+    color: var(--white);
+    border: 2.5px solid var(--ink);
+    border-radius: 24px;
+    padding: 32px 28px;
+    box-shadow: var(--shadow-pop);
+    position: relative;
+    transition: all 0.2s;
+  }
+  .step-card:nth-child(1) { transform: rotate(-1deg); }
+  .step-card:nth-child(2) { transform: rotate(1deg) translateY(8px); }
+  .step-card:nth-child(3) { transform: rotate(-1.5deg); }
+  .step-card:nth-child(4) { transform: rotate(1deg) translateY(8px); }
+  .step-card:hover {
+    transform: rotate(0deg) translate(-3px, -3px);
+    box-shadow: 9px 9px 0 var(--ink);
+  }
+
+  .step-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 48px; height: 48px;
+    background: var(--yellow);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    border: 2.5px solid var(--ink);
+    border-radius: 12px;
+    box-shadow: 3px 3px 0 var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .step-card h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .step-card p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* ─── CATALOG ─── */
+  #catalog {
+    background: var(--blue);
+    color: var(--white);
+    padding: 90px 32px;
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  #catalog::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1.5px, transparent 1.6px);
+    background-size: 26px 26px;
+    pointer-events: none;
+  }
+
+  .catalog-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+
+  #catalog .section-eyebrow { color: var(--yellow); }
+  #catalog .section-eyebrow::before { content: '🍋'; }
+  #catalog .section-title { color: var(--white); }
+  #catalog .section-sub { color: rgba(255,255,255,0.8); }
+
+  .filter-bar {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 36px;
+  }
+
+  .filter-btn {
+    padding: 9px 18px;
+    border-radius: 999px;
+    border: 2px solid var(--ink);
+    background: var(--cream-warm);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  .filter-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--ink); }
+  .filter-btn.active {
+    background: var(--yellow);
+    color: var(--ink);
+  }
+
+  .gear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+  }
+
+  .gear-card {
+    background: var(--cream-warm);
+    color: var(--ink);
+    border: 2.5px solid var(--ink);
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 5px 5px 0 var(--ink);
+    transition: all 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .gear-card::after {
+    content: '';
+    position: absolute;
+    top: -20%; right: -20%;
+    width: 100px; height: 100px;
+    background: radial-gradient(circle, var(--yellow-glow) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .gear-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0 var(--ink);
+  }
+  .gear-card:hover::after { opacity: 1; }
+  .gear-card.hidden { display: none; }
+
+  .card-top {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .card-tag {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 2px solid var(--ink);
+  }
+
+  .tag-Camera { background: #FFB8C8; }
+  .tag-Lens { background: #B8E8E0; }
+  .tag-Lighting { background: var(--yellow); }
+  .tag-Audio { background: #D4C5F9; }
+  .tag-Stabilizer { background: #FFCDB2; }
+  .tag-Storage { background: #B8D4F0; }
+  .tag-Tripod\/Support { background: #C8E8C8; }
+  .tag-Accessory { background: #F0DFB8; }
+
+  .card-avail {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .card-avail::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--green);
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+  }
+
+  .card-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+    min-height: 50px;
+  }
+
+  .card-brand {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: rgba(10,10,10,0.55);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+
+  .card-price {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding-top: 14px;
+    border-top: 2px dashed var(--ink);
+  }
+  .card-price-num {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--blue);
+  }
+  .card-price-num small {
+    font-weight: 500;
+    font-size: 0.7rem;
+    color: rgba(10,10,10,0.5);
+    margin-left: 2px;
+  }
+
+  /* ─── FAQ ─── */
+  #faq {
+    background: var(--cream-warm);
+    padding: 90px 32px;
+    position: relative;
+  }
+  #faq::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(41,84,229,0.08) 1.5px, transparent 1.6px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  .faq-inner {
+    max-width: 800px; margin: 0 auto;
+    position: relative; z-index: 2;
+  }
+
+  .faq-item {
+    background: var(--white);
+    border: 2.5px solid var(--ink);
+    border-radius: 16px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    box-shadow: 4px 4px 0 var(--ink);
+    transition: transform 0.15s;
+  }
+  .faq-item:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--ink); }
+
+  .faq-question {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    user-select: none;
+    gap: 16px;
+    color: var(--ink);
+  }
+
+  .faq-icon {
+    width: 32px; height: 32px;
+    background: var(--yellow);
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--ink);
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--blue); color: var(--white); }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 24px;
+    font-size: 0.92rem;
+    color: rgba(10,10,10,0.7);
+    line-height: 1.7;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 320px;
+    padding-bottom: 22px;
+  }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: var(--blue);
+    color: var(--white);
+    padding: 100px 32px;
+    border-top: 3px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  #contact::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1.5px, transparent 1.6px);
+    background-size: 28px 28px;
+  }
+
+  .contact-inner {
+    max-width: 1100px; margin: 0 auto;
+    position: relative; z-index: 2;
+    text-align: center;
+  }
+
+  #contact .section-eyebrow { color: var(--yellow); justify-content: center; }
+  #contact .section-title { color: var(--white); margin-bottom: 14px; }
+  #contact .section-sub { color: rgba(255,255,255,0.85); margin: 0 auto 56px; }
+
+  .channels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .channel-card {
+    background: var(--cream-warm);
+    color: var(--ink);
+    border: 2.5px solid var(--ink);
+    border-radius: 20px;
+    padding: 32px 24px;
+    box-shadow: 6px 6px 0 var(--ink);
+    text-decoration: none;
+    transition: all 0.15s;
+    text-align: center;
+  }
+  .channel-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 var(--ink);
+  }
+
+  .channel-emoji {
+    font-size: 2.4rem;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .channel-title {
+    font-weight: 800;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+  .channel-sub {
+    font-size: 0.84rem;
+    color: rgba(10,10,10,0.6);
+  }
+
+  .contact-bandung {
+    margin-top: 56px;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ink);
+    color: var(--cream-warm);
+    border-radius: 999px;
+    padding: 10px 22px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 2px solid var(--ink);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    color: var(--cream-warm);
+    padding: 40px 32px 28px;
+    border-top: 3px solid var(--ink);
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 20px;
+  }
+  footer .bubble-logo {
+    font-size: 1.5rem;
+    text-shadow:
+      -1px -1px 0 var(--cream-warm),
+      1px -1px 0 var(--cream-warm),
+      -1px 1px 0 var(--cream-warm),
+      1px 1px 0 var(--cream-warm);
+    color: var(--blue-soft);
+  }
+  .footer-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: rgba(245,241,229,0.5);
+  }
+  .footer-member {
+    color: var(--yellow);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 20px; }
+    .hero-visual { min-height: 240px; order: -1; }
+    .hero-lemon { max-width: 200px; }
+    .sticker-1 { left: 5%; }
+    .sticker-2 { right: 5%; }
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 12px 16px; }
+    nav .bubble-logo { font-size: 1.2rem; }
+    .nav-links { display: none; }
+    .hero { padding: 60px 16px 80px; }
+    .section, #catalog, #faq, #contact { padding: 60px 16px; }
+    .step-card { transform: none !important; }
+    .step-card:hover { transform: translate(-3px, -3px) !important; }
+    .marquee-track span { font-size: 0.95rem; gap: 28px; }
+    .footer-inner { justify-content: center; text-align: center; }
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in {
+    animation: fadeUp 0.6s ease both;
+  }
+  .fade-in:nth-child(1) { animation-delay: 0.05s; }
+  .fade-in:nth-child(2) { animation-delay: 0.15s; }
+  .fade-in:nth-child(3) { animation-delay: 0.25s; }
+  .fade-in:nth-child(4) { animation-delay: 0.35s; }
+  .fade-in:nth-child(5) { animation-delay: 0.45s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="bubble-logo" href="#">rentale<span class="lemon">🍋</span>n</a>
+  <ul class="nav-links">
+    <li><a href="#how">Cara Kerja</a></li>
+    <li><a href="#catalog">Alat</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Kontak</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Hubungi Kami →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-watermark">@rentalemon</span>
+  <div class="hero-inner">
+    <div>
+      <div class="pill-tag fade-in">📍 Bandung · West Java</div>
+      <h1 class="fade-in">Sewa kamera<br>dari teman, <span class="highlight-yellow solid">bukan toko.</span></h1>
+      <p class="hero-sub fade-in">
+        Penyewaan peralatan fotografi & videografi pro berbasis pertemanan di Bandung. <strong>Tanpa uang jaminan tunai</strong> — cuma kepercayaan, kenalan, dan komunikasi yang jujur.
+      </p>
+      <div class="hero-actions fade-in">
+        <a href="#catalog" class="btn-primary">Lihat Daftar Alat ↓</a>
+        <a href="#how" class="btn-ghost">Cara kerjanya →</a>
+      </div>
+    </div>
+    <div class="hero-visual fade-in">
+      <span class="sticker sticker-1">🤝 No Deposit</span>
+      <span class="sticker sticker-2">📸 38 Alat Siap</span>
+      <!-- Lemon mascot SVG -->
+      <svg class="hero-lemon" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <!-- Stem and leaves -->
+        <path d="M180 80 Q175 60 165 50" stroke="#1A4A1A" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <ellipse cx="155" cy="55" rx="40" ry="22" fill="#3FA53F" transform="rotate(-30 155 55)"/>
+        <ellipse cx="155" cy="55" rx="40" ry="22" fill="none" stroke="#1A4A1A" stroke-width="4" transform="rotate(-30 155 55)"/>
+        <path d="M130 50 Q150 45 175 55" stroke="#1A4A1A" stroke-width="2" fill="none" transform="rotate(-30 155 55)"/>
+        <ellipse cx="135" cy="105" rx="50" ry="25" fill="#3FA53F" transform="rotate(-50 135 105)"/>
+        <ellipse cx="135" cy="105" rx="50" ry="25" fill="none" stroke="#1A4A1A" stroke-width="4" transform="rotate(-50 135 105)"/>
+        <path d="M105 100 Q130 95 165 110" stroke="#1A4A1A" stroke-width="2" fill="none" transform="rotate(-50 135 105)"/>
+        <!-- Lemon body -->
+        <ellipse cx="220" cy="230" rx="140" ry="135" fill="#FFDD00"/>
+        <ellipse cx="220" cy="230" rx="140" ry="135" fill="none" stroke="#0A0A0A" stroke-width="6"/>
+        <!-- Highlight -->
+        <ellipse cx="180" cy="170" rx="35" ry="50" fill="#FFFFFF" opacity="0.6" transform="rotate(-25 180 170)"/>
+        <circle cx="270" cy="195" r="8" fill="#FFFFFF" opacity="0.7"/>
+        <!-- Texture dots -->
+        <circle cx="170" cy="280" r="3" fill="#D4B500" opacity="0.6"/>
+        <circle cx="200" cy="310" r="2.5" fill="#D4B500" opacity="0.6"/>
+        <circle cx="240" cy="290" r="3" fill="#D4B500" opacity="0.6"/>
+        <circle cx="180" cy="320" r="2" fill="#D4B500" opacity="0.6"/>
+        <circle cx="260" cy="320" r="2.5" fill="#D4B500" opacity="0.6"/>
+        <circle cx="220" cy="340" r="2" fill="#D4B500" opacity="0.6"/>
+        <!-- Face -->
+        <circle cx="185" cy="225" r="4" fill="#0A0A0A"/>
+        <circle cx="255" cy="225" r="4" fill="#0A0A0A"/>
+        <path d="M195 265 Q220 285 245 265" stroke="#0A0A0A" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <!-- Cheek blush -->
+        <ellipse cx="170" cy="250" rx="10" ry="5" fill="#FF8FA8" opacity="0.5"/>
+        <ellipse cx="270" cy="250" rx="10" ry="5" fill="#FF8FA8" opacity="0.5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Sony FX30</span>
+    <span>Canon 85mm L</span>
+    <span>Sigma 24-70 ART II</span>
+    <span>Godox SL60</span>
+    <span>Zhiyun Weebill S</span>
+    <span>Nikkor 80-200 f/2.8</span>
+    <span>Saramonic BlinkX</span>
+    <span>Tascam DR-05X</span>
+    <span>Sony FX30</span>
+    <span>Canon 85mm L</span>
+    <span>Sigma 24-70 ART II</span>
+    <span>Godox SL60</span>
+    <span>Zhiyun Weebill S</span>
+    <span>Nikkor 80-200 f/2.8</span>
+    <span>Saramonic BlinkX</span>
+    <span>Tascam DR-05X</span>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section">
+    <div class="section-eyebrow">Cara Kerjanya</div>
+    <h2 class="section-title">Berbasis pertemanan,<br>bukan transaksi.</h2>
+    <p class="section-sub">Empat langkah dari kenalan sampai bawa pulang alat. Karena kami berbasis kepercayaan, prosesnya lebih santai — tapi tetap rapi.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Dikenalkan teman</h3>
+        <p>Rentalemon hanya untuk undangan. Kamu perlu dijamin (di-vouch) oleh seseorang yang sudah dikenal pemilik.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Daftar sekali aja</h3>
+        <p>Isi formulir pendaftaran anggota — info dasar, kontak darurat, dan ID. Cukup sekali sebelum sewa pertama.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Pickup & cek bareng</h3>
+        <p>Datang ke lokasi. Kita isi Daftar Periksa Kondisi sama-sama, tanda tangan Perjanjian Sewa. Jelas dari awal.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Pakai & balikin tepat waktu</h3>
+        <p>Shoot sepuasnya. Kembalikan tepat waktu, kondisi sama. Komunikasi jujur kalau ada apa-apa — itu kuncinya.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section id="catalog">
+  <div class="catalog-inner">
+    <div class="section-eyebrow">Daftar Alat</div>
+    <h2 class="section-title">Yang bisa kamu pinjem<br>buat berkarya.</h2>
+    <p class="section-sub">38 alat siap pakai — 5 kamera, 16 lensa, 17 peralatan pendukung. Dari Sony FX30 sampai Canon 200mm f/1.8 L. Tarif harian, dirawat sendiri.</p>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All (38)</button>
+      <button class="filter-btn" data-filter="Camera">📷 Camera</button>
+      <button class="filter-btn" data-filter="Lens">🔭 Lens</button>
+      <button class="filter-btn" data-filter="Lighting">💡 Lighting</button>
+      <button class="filter-btn" data-filter="Audio">🎙️ Audio</button>
+      <button class="filter-btn" data-filter="Stabilizer">🎥 Stabilizer</button>
+      <button class="filter-btn" data-filter="Tripod/Support">🦯 Tripod</button>
+      <button class="filter-btn" data-filter="Storage">💾 Storage</button>
+      <button class="filter-btn" data-filter="Accessory">🧩 Accessory</button>
+    </div>
+    <div class="gear-grid" id="gearGrid"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="section-eyebrow">Pertanyaan yang Sering Ditanya</div>
+    <h2 class="section-title"><span class="highlight-yellow solid">Penting!</span><br>Wajib baca sampai akhir.</h2>
+    <p class="section-sub">Tujuh hal paling sering ditanyain — dari soal jaminan, vouching, sampai data privasi. Kalau masih bingung setelah baca ini, langsung DM aja.</p>
+    <div id="faqContainer"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-eyebrow">Kontak</div>
+    <h2 class="section-title">Halo!<br>Sapa kami dulu yuk.</h2>
+    <p class="section-sub">Kami orang beneran di Bandung. Kalau ada teman yang vouch buat kamu, sebut aja namanya pas DM — biar prosesnya lebih cepet.</p>
+    <div class="channels-grid">
+      <a href="https://instagram.com/rentalemon" class="channel-card" target="_blank">
+        <span class="channel-emoji">📸</span>
+        <div class="channel-title">@rentalemon</div>
+        <div class="channel-sub">Instagram DM — saluran utama</div>
+      </a>
+      <div class="channel-card">
+        <span class="channel-emoji">💬</span>
+        <div class="channel-title">WhatsApp</div>
+        <div class="channel-sub">Nomor di-share setelah perkenalan via IG</div>
+      </div>
+      <div class="channel-card">
+        <span class="channel-emoji">📍</span>
+        <div class="channel-title">Bandung</div>
+        <div class="channel-sub">Lokasi pickup di-share setelah konfirmasi</div>
+      </div>
+    </div>
+    <div class="contact-bandung">📍 Bandung, Jawa Barat · Indonesia</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="#" class="bubble-logo">rentale<span class="lemon">🍋</span>n</a>
+    <div class="footer-note">© 2026 · Made with 🍋 in Bandung</div>
+    <a href="#contact" class="footer-member">⭐ Anggota? Hubungi kami →</a>
+  </div>
+</footer>
+
+<script>
+const gear = [
+  { name: "Sony FX30", brand: "Sony", cat: "Camera", rate: 275000 },
+  { name: "Nikon F5", brand: "Nikon", cat: "Camera", rate: 150000 },
+  { name: "Nikon FX90", brand: "Nikon", cat: "Camera", rate: 125000 },
+  { name: "Canon M50", brand: "Canon", cat: "Camera", rate: 125000 },
+  { name: "Pentax Espio Mini", brand: "Pentax", cat: "Camera", rate: 100000 },
+  { name: "Canon EF 200mm f/1.8 L USM", brand: "Canon", cat: "Lens", rate: 5000000 },
+  { name: "Canon EF 85mm f/1.2 L USM", brand: "Canon", cat: "Lens", rate: 250000 },
+  { name: "Canon EF 50mm f/1.2 L USM", brand: "Canon", cat: "Lens", rate: 250000 },
+  { name: "Nikkor AF-S 80-200mm f/2.8", brand: "Nikon", cat: "Lens", rate: 125000 },
+  { name: "Canon EF 135mm f/2 L USM", brand: "Canon", cat: "Lens", rate: 125000 },
+  { name: "Canon EF 16-35mm f/2.8 L USM", brand: "Canon", cat: "Lens", rate: 125000 },
+  { name: "Canon EF 28mm f/1.8 USM", brand: "Canon", cat: "Lens", rate: 75000 },
+  { name: "Nikkor AF 70-210mm f/4", brand: "Nikon", cat: "Lens", rate: 75000 },
+  { name: "Nikkor AF 24-120mm f/3.5-5.6", brand: "Nikon", cat: "Lens", rate: 75000 },
+  { name: "Nikkor AF-S 18-70mm f/3.5-4.5", brand: "Nikon", cat: "Lens", rate: 75000 },
+  { name: "Nikkor AF-S 35mm f/1.8", brand: "Nikon", cat: "Lens", rate: 75000 },
+  { name: "Nikkor 200mm f/4", brand: "Nikon", cat: "Lens", rate: 75000 },
+  { name: "Nikkor 50mm f/1.4", brand: "Nikon", cat: "Lens", rate: 75000 },
+  { name: "Sony E 16-50mm f/3.5-5.6 Kit", brand: "Sony", cat: "Lens", rate: 75000 },
+  { name: "Sony E 30mm f/3.5 Macro", brand: "Sony", cat: "Lens", rate: 75000 },
+  { name: "Canon EF-M 15-45mm f/3.5-6.3 Kit", brand: "Canon", cat: "Lens", rate: 75000 },
+  { name: "Godox SL60", brand: "Godox", cat: "Lighting", rate: 50000 },
+  { name: "Viltrox L116T", brand: "Viltrox", cat: "Lighting", rate: 25000 },
+  { name: "Weeylite RB05", brand: "Weeylite", cat: "Lighting", rate: 25000 },
+  { name: "Tascam DR-05X", brand: "Tascam", cat: "Audio", rate: 50000 },
+  { name: "Saramonic BlinkX Pro 2", brand: "Saramonic", cat: "Audio", rate: 50000 },
+  { name: "Boya PVM 1000L", brand: "Boya", cat: "Audio", rate: 50000 },
+  { name: "Zhiyun Weebill S", brand: "Zhiyun", cat: "Stabilizer", rate: 100000 },
+  { name: "Takara Rover 66 Tripod", brand: "Takara", cat: "Tripod/Support", rate: 50000 },
+  { name: "Takara Vit Tripod", brand: "Takara", cat: "Tripod/Support", rate: 25000 },
+  { name: "SanDisk SSD Extreme V2", brand: "SanDisk", cat: "Storage", rate: 50000 },
+  { name: "SanDisk SD Card 128GB", brand: "SanDisk", cat: "Storage", rate: 25000 },
+  { name: "SanDisk SD Card 64GB", brand: "SanDisk", cat: "Storage", rate: 25000 },
+  { name: "EF to E Mount Adapter", brand: "Generic", cat: "Accessory", rate: 100000 },
+  { name: "EF to EF-M Mount Adapter", brand: "Generic", cat: "Accessory", rate: 100000 },
+  { name: "Sony NP-FW50 Battery", brand: "Sony", cat: "Accessory", rate: 50000 },
+  { name: "Backdrop", brand: "Generic", cat: "Accessory", rate: 25000 },
+  { name: "Canon LP-E12 Battery", brand: "Canon", cat: "Accessory", rate: 25000 },
+];
+
+function formatIDR(n) {
+  return 'Rp ' + n.toLocaleString('id-ID');
+}
+
+function buildGrid(filter) {
+  const grid = document.getElementById('gearGrid');
+  grid.innerHTML = '';
+  const items = filter === 'all' ? gear : gear.filter(g => g.cat === filter);
+  items.forEach(item => {
+    const safeCat = item.cat.replace('/', '\\/');
+    grid.innerHTML += `
+      <div class="gear-card" data-cat="${item.cat}">
+        <div class="card-top">
+          <span class="card-tag tag-${safeCat}">${item.cat}</span>
+          <span class="card-avail">Available</span>
+        </div>
+        <div class="card-name">${item.name}</div>
+        <div class="card-brand">// ${item.brand}</div>
+        <div class="card-price">
+          <span class="card-price-num">${formatIDR(item.rate)}<small>/ hari</small></span>
+        </div>
+      </div>`;
+  });
+}
+
+buildGrid('all');
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    buildGrid(btn.dataset.filter);
+  });
+});
+
+const faqs = [
+  { q: "Bener nih, ga ada uang jaminan?", a: "Bener. Rentalemon dibangun di atas pertemanan dan kepercayaan, bukan deposit tunai. Tapi konsekuensinya: kamu bertanggung jawab penuh atas alat selama masa sewa — kalau rusak, hilang, atau dicuri, kamu tanggung biaya perbaikan atau penggantian sesuai nilai pasar. Itu sebabnya kami selektif soal siapa yang boleh sewa." },
+  { q: "Cara gabung jadi anggota gimana?", a: "Rentalemon sifatnya undangan. Kamu perlu dikenal langsung sama pemilik, atau dijamin (di-vouch) sama orang yang udah dikenal. Setelah itu, kamu isi Formulir Pendaftaran Anggota satu kali — info dasar, kontak darurat, foto ID buat catatan internal kami (bukan jaminan, ya). Setelah disetujui, kamu bisa sewa." },
+  { q: "Kalau alatnya rusak atau hilang gimana?", a: "Pertama: kabarin secepatnya, sejujurnya. Kami isi Laporan Kerusakan & Kehilangan bareng-bareng. Untuk kerusakan yang masih bisa diperbaiki, kamu tanggung biaya perbaikan sesuai estimasi teknisi resmi. Untuk yang hilang atau total loss, kamu tanggung nilai pengganti penuh sesuai Daftar Induk Peralatan atau harga pasar — yang lebih tinggi. Bisa cicil kalau perlu, kita atur bareng." },
+  { q: "Berapa lama bisa sewa?", a: "Sesuai kesepakatan di Perjanjian Sewa — bisa harian, beberapa hari, atau lebih lama. Yang penting tepat waktu sesuai tanggal & jam yang disepakati. Kalau ada kemungkinan telat, kabarin sebelum batas waktu — keterlambatan berulang tanpa pemberitahuan bisa bikin akses kamu dibatasi." },
+  { q: "Apa yang ga boleh dilakuin sama alat?", a: "Empat hal yang dilarang: (1) menyewakan ulang ke pihak ketiga, (2) pakai di lingkungan berbahaya tanpa pengaman — hujan deras tanpa rain cover, area air laut, debu ekstrem, (3) konten ilegal, (4) modifikasi alat tanpa izin. Selain itu, pakai sesuai kemampuan teknis kamu — kalau ragu, tanya dulu." },
+  { q: "Cek alat pas pickup-nya gimana?", a: "Kita isi Daftar Periksa Kondisi Peralatan bareng — bodi, lensa, sensor, tombol, layar, baterai, aksesoris, semua dicek satu-satu. Apa yang ga dicatat di daftar pas pengambilan dianggap dalam kondisi baik. Pas pengembalian, kita cek lagi pakai daftar yang sama. Transparan, ga ada kejutan." },
+  { q: "Data pribadi saya aman ga?", a: "Kami patuh sama UU Pelindungan Data Pribadi (UU No. 27/2022). Data kamu — nama, kontak, ID, riwayat sewa — disimpan privat, cuma diakses pemilik, ga dibagi atau dijual ke pihak ketiga. Kamu berhak minta lihat, perbaikin, atau hapus data kamu kapan aja. Catatan sewa biasanya disimpan maksimal 2 tahun setelah sewa terakhir." },
+  { q: "Kalau ada perselisihan?", a: "Pertama-tama: ngobrol dulu, terbuka dan tenang. Itu cara Rentalemon. Kalau ga ketemu titik temu, kita lanjut ke mediasi pihak ketiga yang disetujui bersama. Semua tunduk pada hukum Republik Indonesia. Tujuan kami selalu: jaga pertemanan, selesaikan dengan adil." },
+];
+
+const faqContainer = document.getElementById('faqContainer');
+faqs.forEach(f => {
+  faqContainer.innerHTML += `
+    <div class="faq-item">
+      <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <span>${f.q}</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">${f.a}</div>
+    </div>`;
+});
+</script>
+</body>
+</html>
